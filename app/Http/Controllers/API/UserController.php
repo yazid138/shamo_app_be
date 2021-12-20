@@ -114,7 +114,7 @@ class UserController extends Controller
                 'phone_number' => 'string|max:15',
             ]);
 
-            $user = Auth::user();
+            $user = $request->user();
             $user->update($validated);
 
             return ResponseFormatter::success(

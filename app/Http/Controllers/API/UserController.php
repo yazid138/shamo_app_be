@@ -43,7 +43,7 @@ class UserController extends Controller
             return ResponseFormatter::error(
                 [
                     'message' => 'Something went wrong',
-                    'error' => $error
+                    'error' => $error->validator->errors()
                 ],
                 'Gagal register user',
                 500
@@ -125,7 +125,7 @@ class UserController extends Controller
             return ResponseFormatter::error(
                 [
                     'message' => 'Something went wrong',
-                    'error' => $error
+                    'error' => $error->validator->errors()
                 ],
                 'Update Failed',
                 400

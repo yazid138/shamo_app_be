@@ -81,7 +81,7 @@ class TransactionController extends Controller
             return ResponseFormatter::error(
                 [
                     'message' => 'Something went wrong',
-                    'error' => $error,
+                    'error' => $error->validator->errors(),
                 ],
                 'Data transaksi gagal',
                 400
